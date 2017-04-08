@@ -1,6 +1,7 @@
 from bottle import route, run, request
-import random
 from snake.game import Game
+from snake.runner import Runner
+
 
 games = {}
 
@@ -33,14 +34,11 @@ def move():
 
     game.update_state(data)
 
-    directions = ['up', 'down', 'left', 'right']
+    runner = Runner(game)
+    selection = runner.move()
 
-    while 1:
-        selection = random.choice(directions)
-        if game.is_safe_move(selection):
-            break
-
-    print('move', data['snakes'][0]['coords'], selection, game.current_head, game.coord_for_direction(selection))
+    print('move', data)
+    print('moving', selection)
 
     return {
         'move': selection,
