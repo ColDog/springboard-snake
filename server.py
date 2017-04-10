@@ -18,12 +18,13 @@ def start():
     games[game_id] = Game(game_id=game_id, width=board_width, height=board_height, snake_id=None)
 
     return {
-        "color": "#FF0000",
-        "secondary_color": "#00FF00",
-        "head_url": "http://placecage.com/c/100/100",
-        "name": "Cage Snake",
-        "head_type": "pixel",
-        "tail_type": "pixel"
+
+        "color": "#565287",
+        "secondary_color": "#7d7989",
+        "head_url": "http://orig10.deviantart.net/cf94/f/2012/317/1/6/snake_wallpaper__by_shadow_of_nemo-d5kwelc.jpg",
+        "name": "Shadow Snek",
+        "head_type": "smile",
+        "tail_type": "curled"
     }
 
 
@@ -41,8 +42,9 @@ def move():
     print('moving', selection)
 
     return {
+        # 'up', 'down', 'left', 'right'
         'move': selection,
-        'taunt': 'battlesnake-python!'
+        'taunt': 'Come at me!'
     }
 
 

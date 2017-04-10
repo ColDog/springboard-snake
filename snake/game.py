@@ -11,6 +11,7 @@ class Game:
         self.snakes = {}
         self.dead_snakes = {}
         self.food = []
+        self.food_direction = None
 
     @property
     def me(self):
@@ -47,4 +48,4 @@ class Game:
         for new_snake_state in new_state['snakes']:
             self.add_snake(new_snake_state)
         self.add_food(new_state['food'])
-        self.remove_dead_snakes(new_state['dead_snakes'])
+        # self.remove_dead_snakes(new_state['dead_snakes'])

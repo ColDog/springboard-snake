@@ -11,6 +11,14 @@ class Helpers:
                 return True
         return False
 
+    def snake_parts(self):
+        snake_parts = []
+        for snake_id in self.game.snakes.keys():
+            snake = self.game.snakes[snake_id]
+            for snake_coord in snake.coords:
+                snake_parts.append(snake_coord)
+        return snake_parts
+
     def has_snake(self, coord):
         """Checks whether a snake is at the (x, y) position"""
         for snake_id in self.game.snakes.keys():
